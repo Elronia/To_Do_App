@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>New Task</h1>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="name">Please Enter Your Task</label>
+                    <input type="name" class="form-control" id="name" placeholder="Task Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newTaskDescription">Description</label>
+                <textarea type="text" class="form-control" id="newTaskDescription" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="inputAssignedTo">Who is this task assigned to?</label>
+                <input type="text" class="form-control" id="inputAssignedTo" placeholder="Assigned To">
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="newTaskDueDate">Due Date</label>
+                    <input type="date" class="form-control" id="newTaskDueDate">
+                </div>
+                <!-- <div class="form-group col-md-6 input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div> -->
+                <div class="form-group col-md-6">
+                    <label for="inputStatus">Status</label>
+                    <select id="inputStatus" class="form-control">
+                        <option selected>Choose Your Status</option>
+                        <option>TODO</option>
+                        <option>IN PROGRESS</option>
+                        <option>REVIEW</option>
+                        <option>DONE</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Add Task</button>
+        </form>
+    </div>
+
+    <div class="container my-5">
+        <h1>List of Tasks</h1>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action list-group-item-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">To Be proficient with JavaScript</h5>
+                    <span class="badge badge-info py-2">IN PROGRESS</span> 
+                </div>
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1">Work on Projects and get the certification.</p>
+                    <p class="mb-1">Ekaterina</p>
+                    <small>09/30/21</small>
+                    <!-- <button href="#" class="btn btn-danger py-2">Delete</button> -->
+                    <a href="#" class="btn btn-danger py-5">Delete</a>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Graduate from Flatiron School</h5>
+                    <!-- <small class="text-muted"></small> -->
+                    <span class="badge badge-success py-2">DONE</span>
+                </div>
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1">Built Fullstack projects</p>
+                    <p class="mb-1">Ekaterina</p>
+                    <small class="text-muted">11/13/20</small>
+                    <a href="#" class="btn btn-danger py-5">Delete</a>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">To Learn Python</h5>
+                    <span class="badge badge-warning py-2">PENDING</span>
+                </div>
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1">Work on a Project with Flask</p>
+                    <p class="mb-1">Ekaterina</p>
+                    <small>08/14/21</small>
+                    <!-- <button href="#" class="btn btn-danger py-2">Delete</button> -->
+                    <a href="#" class="btn btn-danger py-5">Delete</a>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-success">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">MS Azure</h5>
+                    <span class="badge badge-success py-2">DONE</span>
+                </div>
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1">Complete Migration to MS Azure Project</p>
+                    <p class="mb-1">Ekaterina</p>
+                    <small>08/14/21</small>
+                    <!-- <button href="#" class="btn btn-danger py-2">Delete</button> -->
+                    <a href="#" class="btn btn-danger py-5">Delete</a>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-danger">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Nanodegree Program</h5>
+                    <span class="badge badge-info py-2">IN PROGRESS</span>
+                </div>
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1">Complete Udacity Nanodegree Program "Developer Using MS Azure"</p>
+                    <p class="mb-1">Ekaterina</p>
+                    <small>09/24/21</small>
+                    <!-- <button href="#" class="btn btn-danger py-2">Delete</button> -->
+                    <a href="#" class="btn btn-danger py-5">Delete</a>
+                </div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-warning">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">CUNY Upskilling Scholarship</h5>
+                    <span class="badge badge-info py-2">IN PROGRESS</span>
+                </div>
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1">Complete all the projects and assignments</p>
+                    <p class="mb-1">Ekaterina</p>
+                    <small>09/24/21</small>
+                    <!-- <button href="#" class="btn btn-danger py-2">Delete</button> -->
+                    <a href="#" class="btn btn-danger py-5">Delete</a>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="jumbotron mx-2">
+            <h1 class="display-4 mx-5">My Tasks</h1>
+            <!-- <div id="list-items"> -->
+                <div class="row mx-5">
+                    <div class="col-sm-3 card text-center mx-5" style="width: 18rem;">                
+                        <div class="card-body">
+                            <h5 class="card-title">Task 1</h5>
+                            <p class="card-text">task 1 description</p>
+                            <p class="card-text">Ekaterina Zarudnaya</p>
+                            <p class="card-text">Due Date: Aug 20 - 2021</p>
+                            <span class="badge badge-info py-2">IN PROGRESS</span>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-sm-3 card text-center mx-5" style="width: 18rem;">                
+                        <div class="card-body">
+                            <h5 class="card-title">Task 2</h5>
+                            <p class="card-text">task 2 description</p>
+                            <p class="card-text">Ekaterina Zarudnaya</p>
+                            <p class="card-text">Due Date: Sep 20 - 2021</p>
+                            <span class="badge badge-success py-2">DONE</span>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-sm-3 card text-center mx-5" style="width: 18rem;">                
+                        <div class="card-body">
+                            <h5 class="card-title">Task 3</h5>
+                            <p class="card-text">task 3 description</p>
+                            <p class="card-text">Ekaterina Zarudnaya</p>
+                            <p class="card-text">Due Date: Feb 20 - 2021</p>
+                            <span class="badge badge-warning py-2">PENDING</span>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row mx-5">
+                    <div class="col-sm-3 card text-center mx-5" style="width: 18rem;">                
+                        <div class="card-body">
+                            <h5 class="card-title">Task 4</h5>
+                            <p class="card-text">task 4 description</p>
+                            <p class="card-text">Sara Woldearegay</p>
+                            <p class="card-text">Due Date: Aug 20 - 2021</p>
+                            <span class="badge badge-success py-2">DONE</span>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-sm-3 card text-center mx-5" style="width: 18rem;">                
+                        <div class="card-body">
+                            <h5 class="card-title">Task 5</h5>
+                            <p class="card-text">task 5 description</p>
+                            <p class="card-text">Sara Woldearegay</p>
+                            <p class="card-text">Due Date: Oct 15 - 2021</p>
+                            <span class="badge badge-info py-2">IN PROGRESS</span>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-sm-3 card text-center mx-5" style="width: 18rem;">                
+                        <div class="card-body">
+                            <h5 class="card-title">Task 5</h5>
+                            <p class="card-text">task 5 description</p>
+                            <p class="card-text">Sara Woldearegay</p>
+                            <p class="card-text">Due Date: Oct 15 - 2021</p>
+                            <span class="badge badge-info py-2">IN PROGRESS</span>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            <!-- </div> -->
+        </div>
+    </div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+</body>
+</html>
