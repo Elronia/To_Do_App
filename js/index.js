@@ -45,6 +45,8 @@ newTaskForm.addEventListener('submit', (event) => {
     taskManager.addTask(name, description, assignedTo, dueDate, status);
     console.log(taskManager);
     
+    //Render the tasks
+    taskManager.render();
 
     // Clear the form
     newTaskNameInput.value = '';
