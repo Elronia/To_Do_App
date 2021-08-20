@@ -52,6 +52,27 @@ class TaskManager {
         this.tasks.push(task);
         
     }
+
+    // getTaskById(taskId) {
+    //     // Create a variable to store the found task
+    //     let foundTask;
+
+    //     // Loop over the tasks and find the task with the id passed as a parameter
+    //     for (let i = 0; i < this.tasks.length; i++) {
+    //         // Get the current task in the loop
+    //         const task = this.tasks[i];
+
+    //         // Check if its the right task by comparing the task's id to the id passed as a parameter
+    //         if (task.id === taskId) {
+    //             // Store the task in the foundTask variable
+    //             foundTask = task;
+    //         }
+    //     }
+
+    //     // Return the found task
+    //     return foundTask;
+    // }
+
 // Create the render method
     render() {
         // Create an array to store the tasks' HTML
@@ -83,5 +104,5 @@ class TaskManager {
     }
 }
 
-// export { TaskManager, createTaskHtml }
+export { TaskManager, createTaskHtml }
 

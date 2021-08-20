@@ -18,6 +18,9 @@
                 <div class="form-group col-md-12">
                     <label for="newTaskNameInput">Please Enter Your Task</label>
                     <input type="name" class="form-control" id="newTaskNameInput" placeholder="Task Name">
+                    <div class="valid-feedback">
+                        Looks good!
+                      </div>
                 </div>
             </div>
             <div class="form-group">
@@ -26,12 +29,12 @@
             </div>
             <div class="form-group">
                 <label for="newTaskAssignedTo">Who is this task assigned to?</label>
-                <input type="text" class="form-control" id="newTaskAssignedTo" placeholder="Assigned To" >
+                <input type="text" class="form-control" id="newTaskAssignedTo" placeholder="Assigned To">
             </div>
             <div class="form-row">
                 <div class="form-group col">
                     <label for="newTaskDueDate">Due Date</label>
-                    <input type="date" class="form-control" id="newTaskDueDate">
+                    <input type="date" class="form-control" id="newTaskDueDate" >
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputStatus">Status</label>
@@ -44,11 +47,29 @@
                     </select>
                 </div>
             </div>
-            <div id="alertMessage" style="display: none" class="alert alert-danger" role="alert">
-                Error message    
-            </div>
-            <button type="submit" class="btn btn-success btn-block">Add Task</button>
+            <div id="alertMessage" style="display: none" class="alert alert-danger collapse" role="alert">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> message  
+                <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+            </div> 
+            <!-- <div id="alertMessage" class="alert alert-warning alert-dismissible alert-danger fade show" role="alert">
+                <strong>Error message</strong> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div> -->
+            <button id="btnSubmit" type="submit" class="btn btn-success btn-block">Add Task</button>
         </form>
+        <!-- <div class="row">
+            <div class="col">
+                <h2>Tasks</h2>
+                <ul class="list-group" id="tasksList">
+                </ul>
+            </div>
+            <div class="col"></div>
+        </div> -->
     </div>
 
     <div class="container my-5">
@@ -363,5 +384,12 @@
 
     <script src="js/taskManager.js"></script>
     <script src="js/index.js"></script>
+    <script type="text/javascript">    
+        $(document).ready(function (){
+            $('#btnSubmit').click(function () {
+                $('#alertMessage').show('fade')
+            });
+        });
+    </script>
 </body>
 </html>
