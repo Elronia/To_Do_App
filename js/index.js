@@ -34,13 +34,12 @@ newTaskForm.addEventListener('submit', (event) => {
     const assignedTo = newTaskAssignedTo.value;
     const dueDate = newTaskDueDate.value;
     const status = inputStatus.value;
-    if(!validFormFieldInput(name)){
+    if(!validFormFieldInput(name)) {
         errorMessage.innerHTML = "Invalid name input";
         errorMessage.style.display = "block";
-    }else{
+    } else {
         errorMessage.style.display = "none";
     }
-
 
     // Add the task to the task manager
     taskManager.addTask(name, description, assignedTo, dueDate, status);
@@ -65,23 +64,23 @@ function validFormFieldInput(data){
 const tasksList = document.querySelector('#tasksList');
 
 // Add an 'onclick' event listener to the Tasks List
-// tasksList.addEventListener('click', (event) => {
-//     // Check if a "Mark As Done" button was clicked
-//     if (event.target.classList.contains('done-button')) {
-//         // Get the parent Task
-//         const parentTask = event.target.parentElement.parentElement;
+tasksList.addEventListener('click', (event) => {
+    // Check if a "Mark As Done" button was clicked
+    if (event.target.classList.contains('done-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement;
 
-//         // Get the taskId of the parent Task.
-//         const taskId = Number(parentTask.dataset.taskId);
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskId);
 
-//         // Get the task from the TaskManager using the taskId
-//         const task = taskManager.getTaskById(taskId);
+        // Get the task from the TaskManager using the taskId
+        const task = taskManager.getTaskById(taskId);
 
-//         // Update the task status to 'DONE'
-//         task.status = 'DONE';
+        // Update the task status to 'DONE'
+        task.status = 'DONE';
 
-//         // Render the tasks
-//         taskManager.render();
-//     }
-// });
+        // Render the tasks
+        taskManager.render();
+    }
+});
 

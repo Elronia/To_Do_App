@@ -1,32 +1,22 @@
 // Create the HTML for a task
-const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
-    //     const html = `<li class="list-group-item">
-    //         <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-    //             <h5>${name}</h5>
-    //             <span class="badge badge-danger">${status}</span>
-    //         </div>
-    //         <div class="d-flex w-100 mb-3 justify-content-between">
-    //             <small>Assigned To: ${assignedTo}</small>
-    //             <small>Due: ${dueDate}</small>
-    //         </div>
-    //         <p>${description}</p>
-    //     </li>
-    // `
-        const html = `<a href="#" class="list-group-item list-group-item-action list-group-item-primary">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">${name}</h5>
-            <span class="badge badge-info py-2">${status}</span> 
-        </div>
-        <div class="d-flex w-100 justify-content-between">
-            <p class="mb-1">${description}</p>
-            <p class="mb-1">${assignedTo}</p>
-            <small>${dueDate}</small>
-             <!-- <button href="#" class="btn btn-danger py-2">Delete</button>  -->
-            <a href="#" class="btn btn-danger py-2 my-5">Delete</a>
-        </div>
-    </a>`
-    return html;
-};
+const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => 
+        `<a href="#" class="list-group-item list-group-item-action list-group-item-primary" data-task-id=${id}>
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">${name}</h5>
+                <span class="badge badge-info py-2 ${status === 'TODO' ? 'badge-danger' : 'badge-success'}">${status}</span> 
+            </div>
+            <div class="d-flex w-100 justify-content-between">
+                <p class="mb-1">${description}</p>
+                <p class="mb-1">Assigned To: ${assignedTo}</p>
+                <small>Due: ${dueDate}</small>
+                 <!-- <button href="#" class="btn btn-danger py-2">Delete</button>  -->
+                 <!-- <a href="#" class="btn btn-danger py-2 my-5">Delete</a> -->
+            </div>
+            <div class="d-flex w-100 justify-content-end">
+               <button class="btn btn-outline-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+            </div>
+        </a>`
+    
     
 // Create a TaskManager class
 class TaskManager {
@@ -53,25 +43,25 @@ class TaskManager {
         
     }
 
-    // getTaskById(taskId) {
-    //     // Create a variable to store the found task
-    //     let foundTask;
+    getTaskById(taskId) {
+        // Create a variable to store the found task
+        let foundTask;
 
-    //     // Loop over the tasks and find the task with the id passed as a parameter
-    //     for (let i = 0; i < this.tasks.length; i++) {
-    //         // Get the current task in the loop
-    //         const task = this.tasks[i];
+        // Loop over the tasks and find the task with the id passed as a parameter
+        for (let i = 0; i < this.tasks.length; i++) {
+           // Get the current task in the loop
+            const task = this.tasks[i];
 
-    //         // Check if its the right task by comparing the task's id to the id passed as a parameter
-    //         if (task.id === taskId) {
-    //             // Store the task in the foundTask variable
-    //             foundTask = task;
-    //         }
-    //     }
+           // Check if its the right task by comparing the task's id to the id passed as a parameter
+            if (task.id === taskId) {
+                // Store the task in the foundTask variable
+                foundTask = task;
+            }
+        }
 
-    //     // Return the found task
-    //     return foundTask;
-    // }
+        // Return the found task
+        return foundTask;
+    }
 
 // Create the render method
     render() {
@@ -88,7 +78,7 @@ class TaskManager {
             const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 
             // Create the task html
-            const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
+            const taskHtml = createTaskHtml(task.id, task.name, task.description, task.assignedTo, formattedDate, task.status);
 
             // Push it to the tasksHtmlList array
             tasksHtmlList.push(taskHtml);
