@@ -5,6 +5,12 @@ const taskManager = new TaskManager(0);
 // taskManager.addTask();
 // console.log(taskManager.tasks);
 
+// Load the tasks from localStorage
+taskManager.load();
+
+// Render the tasks to the page
+taskManager.render();
+
 // Select the New Task Form
 const newTaskForm = document.querySelector('#newTaskForm');
 
@@ -78,6 +84,9 @@ tasksList.addEventListener('click', (event) => {
 
         // Update the task status to 'DONE'
         task.status = 'DONE';
+
+        // Save the tasks to localStorage
+        taskManager.save();
 
         // Render the tasks
         taskManager.render();
