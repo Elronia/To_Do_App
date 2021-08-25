@@ -14,6 +14,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) =>
             </div>
             <div class="d-flex w-100 justify-content-end">
                <button class="btn btn-outline-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+               <button class="btn btn-outline-danger delete-button">Delete</button>
             </div>
         </a>`
     
@@ -41,6 +42,27 @@ class TaskManager {
         // Push the task to the tasks property
         this.tasks.push(task);
         
+    }
+
+    // Create the deleteTask method
+    deleteTask(taskId) {
+        // Create an empty array and store it in a new variable, newTasks
+        const newTasks = [];
+
+        // Loop over the tasks
+        for (let i = 0; i < this.tasks.length; i++) {
+            // Get the current task in the loop
+            const task = this.tasks[i];
+
+            // Check if the task id is not the task id passed in as a parameter
+            if (task.id !== taskId) {
+                // Push the task to the newTasks array
+                newTasks.push(task);
+            }
+        }
+
+        // Set this.tasks to newTasks
+        this.tasks = newTasks;
     }
 
     getTaskById(taskId) {
