@@ -40,26 +40,30 @@ newTaskForm.addEventListener('submit', (event) => {
     const assignedTo = newTaskAssignedTo.value;
     const dueDate = newTaskDueDate.value;
     const status = inputStatus.value;
-    if(!validFormFieldInput(name)) {
-        errorMessage.innerHTML = "Invalid name input";
+    if(!validFormFieldInput(name)||
+        !validFormFieldInput(description) || 
+        !validFormFieldInput(assignedTo) || 
+        !validFormFieldInput(dueDate) || 
+        !validFormFieldInput(status)) {
+        // errorMessage.innerHTML = "Invalid name input";
         errorMessage.style.display = "block";
     } else {
         errorMessage.style.display = "none";
-    }
 
-    // Add the task to the task manager
-    taskManager.addTask(name, description, assignedTo, dueDate, status);
-    console.log(taskManager);
-    
-    //Render the tasks
-    taskManager.render();
+        // Add the task to the task manager
+        taskManager.addTask(name, description, assignedTo, dueDate, status);
+        console.log(taskManager);
+        
+        //Render the tasks
+        taskManager.render();
 
-    // Clear the form
-    newTaskNameInput.value = '';
-    newTaskDescription.value = '';
-    newTaskAssignedTo.value = '';
-    newTaskDueDate.value = '';
-    inputStatus.value = '';
+        // Clear the form
+        newTaskNameInput.value = '';
+        newTaskDescription.value = '';
+        newTaskAssignedTo.value = '';
+        newTaskDueDate.value = '';
+        inputStatus.value = '';
+        }
 });
 
 function validFormFieldInput(data){
